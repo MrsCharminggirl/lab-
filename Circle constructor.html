@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 3 - Circle Constructor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 250px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <label>Enter radius:</label>
+  <input type="text" id="radius">
+
+  <br>
+  <button onclick="calculate()">Submit</button>
+
+  <div id="output"></div>
+
+  <script>
+    function Circle(radius) {
+      this.radius = radius;
+
+      this.getArea = function() {
+        return Math.PI * this.radius * this.radius;
+      };
+
+      this.getPerimeter = function() {
+        return 2 * Math.PI * this.radius;
+      };
+    }
+
+    function calculate() {
+      let r = parseFloat(document.getElementById("radius").value);
+      let circle = new Circle(r);
+      let area = circle.getArea().toFixed(2);
+      let perimeter = circle.getPerimeter().toFixed(2);
+
+      document.getElementById("output").innerHTML = 
+        "Area is: " + area + "<br>Perimeter is: " + perimeter;
+    }
+  </script>
+
+</body>
+</html>
