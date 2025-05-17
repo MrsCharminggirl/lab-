@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Population Percentage</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .result {
+      background-color: #e6f7ff;
+      border-left: 5px solid #1890ff;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1890ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0f75d3;
+    }
+  </style>
+  <script>
+    const WORLD_POPULATION = 7900;
+
+    function percentageOfWorld1(population) {
+      return ((population / WORLD_POPULATION) * 100).toFixed(1);
+    }
+
+    const percentageOfWorld2 = function(population) {
+      return ((population / WORLD_POPULATION) * 100).toFixed(1);
+    }
+
+    const percentageOfWorld3 = population => ((population / WORLD_POPULATION) * 100).toFixed(1);
+
+    function calculatePercentages() {
+      const chinaPop = 1441;
+      const indiaPop = 1390;
+      const usaPop = 331;
+
+      
+      const res1 = `percentageOfWorld1: China (${chinaPop}) = ${percentageOfWorld1(chinaPop)}%, India (${indiaPop}) = ${percentageOfWorld1(indiaPop)}%, USA (${usaPop}) = ${percentageOfWorld1(usaPop)}%`;
+      const res2 = `percentageOfWorld2: China (${chinaPop}) = ${percentageOfWorld2(chinaPop)}%, India (${indiaPop}) = ${percentageOfWorld2(indiaPop)}%, USA (${usaPop}) = ${percentageOfWorld2(usaPop)}%`;
+      const res3 = `percentageOfWorld3: China (${chinaPop}) = ${percentageOfWorld3(chinaPop)}%, India (${indiaPop}) = ${percentageOfWorld3(indiaPop)}%, USA (${usaPop}) = ${percentageOfWorld3(usaPop)}%`;
+
+      document.getElementById('output1').textContent = res1;
+      document.getElementById('output2').textContent = res2;
+      document.getElementById('output3').textContent = res3;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>World Population Percentages</h2>
+
+    <div class="result" id="output1"></div>
+    <div class="result" id="output2"></div>
+    <div class="result" id="output3"></div>
+
+    <button onclick="calculatePercentages()">Show Percentages</button>
+  </div>
+</body>
+</html>
