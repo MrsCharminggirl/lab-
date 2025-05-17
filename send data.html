@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Data Example</title>
+  <style>
+    fieldset {
+            background-color: lightgray;
+            margin-bottom: 15px;
+        }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      width: 50%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <script>
+    function sendData() {
+      const name = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const Massage = document.getElementById('Massage').value;
+
+
+      if (name && email && Massage) {
+        alert("Name: " + name + "\nEmail: " + email + "\nMassage: " + Massage);
+      } else {
+        alert("Please fill out both fields.");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Send Massage</h2>
+
+  <label for="username">Name:</label>
+  <input type="text" id="username" placeholder="Enter your name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Enter your email" required>
+
+  <div>
+  <label for="Massage">Massage:</label>
+  <textarea class="form-control" id="address" rows="2"></textarea>
+</div>
+
+
+  <button onclick="sendData()">Send Massage</button>
+
+</body>
+</html>
