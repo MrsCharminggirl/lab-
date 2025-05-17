@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>document</title>
+        <style>
+            td{
+                text-align: center;
+            }
+            body{
+                width: 100px;
+            }
+            fieldset{
+                width: 200px;
+                margin-left: 320px;
+                padding: 10px;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+        <p><b>Input section</b></p>
+        <div class="id">
+            <table>
+                <tr>
+                    <td>
+                        <h1>A</h1>
+                        <input type="number" id="a" value="">
+                    </td>
+                    <td>
+                        <h1>B</h1>
+                        <input type="number" id="b" value="">
+                    </td>
+                    <td>
+                        <h1>C</h1>
+                        <input type="number" id="c" value="">
+                    </td>
+                </tr>
+                
+            </table><br><br>
+            <button onclick="ascending()">Sort in ascending order</button>
+            <button onclick="descending()">Sort in descending order</button><p></p>
+            <hr>
+            <p><b>Output Section</b></p>
+            <table>
+                <tr>
+                    <td>
+                        
+                        <input type="number" id="a1" disabled>
+                    </td>
+                    <td>
+                        
+                        <input type="number" id="b1" disabled>
+                    </td>
+                    <td>
+                        
+                        <input type="number" id="c1" disabled>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </fieldset>
+        <script>
+            
+            function ascending(){
+                list=[Number(document.getElementById("a").value),Number(document.getElementById("b").value),Number(document.getElementById("c").value)];
+                list.sort();
+                document.getElementById("a1").value = list[0];
+                document.getElementById("b1").value = list[1];
+                document.getElementById("c1").value = list[2];
+            }
+            function descending(){
+                list=[document.getElementById("a").value,document.getElementById("b").value,document.getElementById("c").value];
+                list.sort();
+                document.getElementById("a1").value = list[2];
+                document.getElementById("b1").value = list[1];
+                document.getElementById("c1").value = list[0];
+            }
+            
+        </script>
+    </body>
+</html>
