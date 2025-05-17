@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Country Object</title>
+  <style>
+    body {
+      background-color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .output {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-left: 5px solid #007bff;
+      margin: 10px 0;
+      font-size: 16px;
+      white-space: pre-line;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+  function showCountryDetails() {
+    const myCountry = {
+      country: "Finland",
+      capital: "Helsinki",
+      language: "Finnish",
+      population: 6,
+      neighbours: ["Sweden", "Norway", "Russia"],
+
+      describe: function() {
+        return `${this.country} has ${this.population} million ${this.language}-speaking people, ` +
+               `${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`;
+      },
+
+      checkIsland: function() {
+        this.isIsland = this.neighbours.length === 0 ? true : false;
+      }
+    };
+
+    let output = `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ` +
+                 `${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.\n`;
+
+  
+    myCountry.population += 3;
+
+   
+    myCountry["population"] -= 3;
+
+
+    output += "population" + myCountry.describe();
+
+
+    myCountry.checkIsland();
+    output += `population ${myCountry.isIsland}`;
+
+  
+    document.getElementById("resultBox").textContent = output;
+
+  
+    console.log(myCountry);
+  }
+</script>
+</head>
+<body>
+
+<div class="container">
+  <h2>My Country Object</h2>
+
+  <div class="output" id="resultBox"></div>
+
+  <button onclick="showCountryDetails()">Run Script</button>
+</div>
+</body>
+</html>
