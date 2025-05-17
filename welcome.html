@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome massage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h3 {
+      color: black;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .input-group {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 25px;
+      white-space: pre-line;
+      font-size: 18px;
+      color: #333;
+    }
+
+    #footer-note {
+      margin-top: 15px;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+   <script>
+    function displayMessage() {
+      let message = `"Welcome to JavaScript Programming"\n'JavaScript is interesting'`;
+      document.getElementById("output").innerText = message;
+    }
+  </script>
+</head>
+<body>
+
+  <label>What is your Name:</label><br>
+  <div class="input-group">
+    <input type="text" id="username">
+    <button onclick="displayMessage()">Submit</button>
+  </div>
+
+  <div id="output"></div>
+  <div id="footer-note">Welcome to the site laurence Svekis</div>
+
+ 
+
+</body>
+</html>
