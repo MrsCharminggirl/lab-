@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Describe Country</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .result {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #e6f7ff;
+      border-left: 5px solid #1890ff;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1890ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0f75d3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Describe Countries</h2>
+    <div class="result" id="result1"></div>
+    <div class="result" id="result2"></div>
+    <div class="result" id="result3"></div>
+    <button onclick="showDescriptions()">Show Country Descriptions</button>
+  </div>
+
+  <script>
+    function describeCountry(country, population, capitalCity) {
+      return `${country} has ${population} million people and its capital city is ${capitalCity}`;
+    }
+
+    function showDescriptions() {
+      const desc1 = describeCountry("Finland", 6, "Helsinki");
+      const desc2 = describeCountry("Tanzania", 61, "Dodoma");
+      const desc3 = describeCountry("Japan", 125, "Tokyo");
+
+      document.getElementById("result1").textContent = desc1;
+      document.getElementById("result2").textContent = desc2;
+      document.getElementById("result3").textContent = desc3;
+    }
+  </script>
+</body>
+</html>
