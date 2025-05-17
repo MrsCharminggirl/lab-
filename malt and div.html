@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication and Division</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 250px;
+      margin-top: 5px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 10px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+    }
+
+    #result-label {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <label>1st number:</label>
+  <input type="text" id="num1">
+
+  <label>2nd number:</label>
+  <input type="text" id="num2">
+
+  <div class="button-group">
+    <button class="multiply-btn" onclick="multiply()">Multiply</button>
+    <button class="divide-btn" onclick="divide()">Divide</button>
+  </div>
+
+  <div id="result-label">The Result is:</div>
+  <div id="output"></div>
+
+  <script>
+    function multiply() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let result = n1 * n2;
+      document.getElementById("output").innerText = result;
+    }
+
+    function divide() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let result = n1 / n2;
+      document.getElementById("output").innerText = result;
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
